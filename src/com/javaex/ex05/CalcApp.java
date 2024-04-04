@@ -9,9 +9,6 @@ public class CalcApp {
     	Scanner sc = new Scanner(System.in);
     	System.out.println("ex) a + b");
     	
-
-    	
-    	
     	for (   ;   ;   ) {
     		int sum = 0;
         	
@@ -48,21 +45,20 @@ public class CalcApp {
     		sum = div.calculate(a,b);
     	}
     	else {
-    	System.out.println("알 수 없는 연산입니다.");
+    	System.err.println("알 수 없는 연산입니다.");		// 잘못된 기호를 입력한 경우
     	}
     	System.out.print(">> ");
     	
     	System.out.println(sum);
+    	
     	} catch (NumberFormatException e) {
-    		System.out.println("알 수 없는 연산입니다.");
+    		System.err.println("알 수 없는 연산입니다.");		//	잘못된 숫자를 입력한 경우
     	} catch (ArithmeticException e) {
-    		System.out.println("0으로 나눌 수 없습니다.");
-    	} catch (Exception e) {
+    		System.err.println("0으로 나눌 수 없습니다.");	//	b가 0인 경우
+    	} catch (Exception e) {		//	그 외 예외
     		e.printStackTrace();
     	}
     } 	// if에서 탈출
-    	
-    	
     	
     	sc.close();
     }
